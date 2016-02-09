@@ -16,12 +16,17 @@ public class SHA1 {
     InputStream fis = new FileInputStream(newFile);
     int n = 0;
     byte[] buffer = new byte[4096];
-    while (n != -1) {
-        n = fis.read(buffer);
-        if (n > 0) {
+    
+        while (n != -1) {
+            
+            n = fis.read(buffer);
+       
+            if (n > 0) {
+                
             digest.update(buffer, 0, n);
         }
     }
-    return digest.digest();
+    
+        return digest.digest();
 }
 }
